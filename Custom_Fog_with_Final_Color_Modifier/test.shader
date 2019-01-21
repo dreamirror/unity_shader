@@ -78,7 +78,7 @@
 		  UNITY_INITIALIZE_OUTPUT(Input, data);
 		  float4 hpos = UnityObjectToClipPos(v.vertex);
 		  hpos.xy /= hpos.w;
-		  data.fog = min(1, dot(hpos.xy, hpos.xy)*0.5);
+		  data.fog = min(1, dot(hpos.xy, hpos.xy)*0.5);//这个地方的点乘是为了将雾的浓度与模型到摄像机位置的x,y距离关联起来，乘以0.5是对这个浓度做的参数修正
 
        }
 		fixed4 _FogColor;
